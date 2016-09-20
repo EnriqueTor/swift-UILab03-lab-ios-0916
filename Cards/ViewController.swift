@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var cardLeft: UILabel!
+    @IBOutlet weak var cardCenter: UILabel!
+    @IBOutlet weak var cardRight: UILabel!
     // TODO: Create IB outlets
     
     override func viewDidLoad() {
@@ -20,6 +23,14 @@ class ViewController: UIViewController {
     
     // TODO: IB actions and code to update UI
 
-  
+    @IBAction func selectCard(_ sender: AnyObject) {
+        
+        cardLeft.text = sender.currentTitle
+        cardLeft.text?.characters.removeLast()
+        cardRight.text = sender.currentTitle
+        cardRight.text?.characters.removeLast()
+        cardCenter.text = sender.currentTitle
+        cardCenter.text?.characters.removeFirst()
+    }
 
 }
